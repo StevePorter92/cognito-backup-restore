@@ -59,29 +59,6 @@ export const argv = yargs
     .example('$0 restore -p <PROFILE> [OPTIONS]', greyed`Restore using the options provided`)
 
     // options
-    .option('profile', {
-        alias: ['p'],
-        describe: dimmed`Use a specific profile from your credential file`,
-        conflicts: ['aws-access-key', 'aws-secret-key'],
-        string: true,
-    })
-    .option('region', {
-        alias: ['r'],
-        describe: dimmed`The region to use. Overrides config/env settings`,
-        string: true,
-    })
-    .option('aws-access-key', {
-        alias: ['key', 'k'],
-        describe: dimmed`The AWS Access Key to use. Overrides config/env settings`,
-        conflicts: ['profile'],
-        string: true,
-    })
-    .option('aws-secret-key', {
-        alias: ['secret', 's'],
-        describe: dimmed`The AWS Secret Key to use. Overrides config/env settings`,
-        conflicts: ['profile'],
-        string: true
-    })
     .option('userpool', {
         alias: ['pool'],
         describe: dimmed`The Cognito pool to use. 'all' to backup all userpools.`,
